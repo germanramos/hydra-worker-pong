@@ -20,14 +20,4 @@ func main() {
 		return instances
 	}
 	pongWorker.Run(fn)
-
-	// pongWorker := worker.NewWorker(serverAddr, serviceName, verbose)
-	// fn := func(instances []map[string]interface{}, args map[string]string) []interface{} {
-	// 	computedInstances := make([]interface{}, 0)
-	// 	for _, instance := range instances {
-	// 		computedInstances = append(computedInstances, instance["Info"].(map[string]interface{})["uri"].(string))
-	// 	}
-	// 	return computedInstances
-	// }
-	// pongWorker.Run(fn)
 }
