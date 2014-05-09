@@ -1,8 +1,6 @@
 package main
 
 import (
-	// "encoding/json"
-	// "log"
 	"os"
 
 	worker "github.com/innotech/hydra-worker-pong/vendors/github.com/innotech/hydra-worker-lib"
@@ -18,12 +16,18 @@ func main() {
 
 	// New Worker connected to Hydra Load Balancer
 	pongWorker := worker.NewWorker(serverAddr, serviceName, verbose)
-	fn := func(instances []map[string]interface{}, args map[string]string) []interface{} {
-		computedInstances := make([]interface{}, 0)
-		for _, instance := range instances {
-			computedInstances = append(computedInstances, instance["Info"].(map[string]interface{})["uri"].(string))
-		}
-		return computedInstances
+	fn := func(instances []interface{}, args map[string]interface{}) []interface{} {
+		return instances
 	}
 	pongWorker.Run(fn)
+
+	// pongWorker := worker.NewWorker(serverAddr, serviceName, verbose)
+	// fn := func(instances []map[string]interface{}, args map[string]string) []interface{} {
+	// 	computedInstances := make([]interface{}, 0)
+	// 	for _, instance := range instances {
+	// 		computedInstances = append(computedInstances, instance["Info"].(map[string]interface{})["uri"].(string))
+	// 	}
+	// 	return computedInstances
+	// }
+	// pongWorker.Run(fn)
 }
