@@ -7,6 +7,7 @@ rm -rf ~/rpmbuild
 rpmdev-setuptree
 
 mkdir ~/rpmbuild/SOURCES/hydra-worker-pong-1
+cp ./fixtures/hydra-worker-pong.conf  ~/rpmbuild/SOURCES/hydra-worker-pong-1
 cp hydra-worker-pong-init.d.sh ~/rpmbuild/SOURCES/hydra-worker-pong-1
 cp ../../bin/hydra-worker-pong ~/rpmbuild/SOURCES/hydra-worker-pong-1
 

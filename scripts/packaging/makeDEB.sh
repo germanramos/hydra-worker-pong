@@ -6,6 +6,9 @@ rm -rf ~/debbuild
 mkdir -p ~/debbuild/DEBIAN
 cp control ~/debbuild/DEBIAN
 
+mkdir -p ~/debbuild/etc/hydra
+cp ./fixtures/hydra-worker-pong.conf ~/debbuild/etc/hydra
+
 mkdir -p ~/debbuild/etc/init.d
 cp hydra-worker-pong-init.d.sh ~/debbuild/etc/init.d/hydra-worker-pong
 
