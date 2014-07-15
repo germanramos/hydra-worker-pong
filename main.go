@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"os"
 
 	worker "github.com/innotech/hydra-worker-pong/vendors/github.com/innotech/hydra-worker-lib"
