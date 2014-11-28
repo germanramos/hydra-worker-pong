@@ -7,8 +7,8 @@ import (
 )
 
 func main() {
-	pongWorker := worker.NewWorker(os.Args)
-	fn := func(instances []interface{}, args map[string]interface{}) []interface{} {
+	pongWorker, _ := worker.NewWorker(os.Args)
+	fn := func(instances []interface{}, clientParams map[string][]string, args map[string]interface{}) []interface{} {
 		return instances
 	}
 	pongWorker.Run(fn)
